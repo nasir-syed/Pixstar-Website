@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "6625942e2d2eca24a20b623a"
+  },
+  "username": "johnmars",
+  "following": [
+    "arthurmorg",
+    "webdeveloper",
+    "nasir"
+  ]
+},
+{
+  "_id": {
+    "$oid": "662594992d2eca24a20b623f"
+  },
+  "username": "arthurmorg",
+  "following": [
+    "johnmars",
+    "webdeveloper"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6625954a2d2eca24a20b6245"
+  },
+  "username": "middlesexdubai",
+  "following": [
+    "nasir",
+    "webdeveloper"
+  ]
+},
+{
+  "_id": {
+    "$oid": "662596902d2eca24a20b6248"
+  },
+  "username": "webdeveloper",
+  "following": [
+    "nasir",
+    "middlesexdubai"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6625985f2d2eca24a20b624c"
+  },
+  "username": "nasir",
+  "following": [
+    "middlesexdubai"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6626c8ec7f8a9082752ef4bd"
+  },
+  "username": "M00914286",
+  "following": []
+},
+{
+  "_id": {
+    "$oid": "662795023add619530d86ec1"
+  },
+  "username": "videotest",
+  "following": []
+},
+{
+  "_id": {
+    "$oid": "662799721dac7f443a3b2493"
+  },
+  "username": "videotest3",
+  "following": []
+},
+{
+  "_id": {
+    "$oid": "66279b031dac7f443a3b249f"
+  },
+  "username": "videotest4",
+  "following": []
+}]

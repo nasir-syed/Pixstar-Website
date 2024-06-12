@@ -1,0 +1,1346 @@
+/* applied to all */
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    
+}
+
+/* CSS for the body */
+body {
+    min-height: 100vh; /* fit to window */
+    background: rgb(241, 241, 241);
+    overflow: hidden;
+
+}
+
+
+/* hide class that is used to display and hide divs according to the button pressed*/
+.hide {
+    display: none !important;
+}
+
+/* content div that contains all the other divs*/
+#content {
+
+    /* spans across the whole window*/
+    width: 100%;
+    height: 100vh;
+
+    /* items are stacked column wise and in the center of the content div*/
+    display: flex;
+    flex-direction: column; /* elements appear column-wise */
+    justify-content: flex-start; 
+    align-items: center; /* center elements */
+}
+
+/* scrollbar*/
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+/* scrollbar track*/
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
+/* the part of the scrollbar the user uses to scroll (the thumb)*/
+::-webkit-scrollbar-thumb {
+    background: #521262;
+    border-radius: 35px 35px;
+
+  }
+
+  /* change colour of the thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+
+
+/* the bar at the top of the page  */
+#navbar {
+    margin-top: 0.2%;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: flex-start;
+    /* border: 4px solid blue; */
+}
+
+/* the logo in the top left corner */
+#logo {
+    width: 5%;
+    text-align: center;
+}
+#logo img {
+    position: relative;
+    height: 100%;
+}
+
+/* contains the home and create btns*/
+.navBtns{
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+    width: 15%;
+    /* border: 4px solid purple; */
+}
+
+.navBtns button{
+    border: 1px rgb(241, 241, 241);
+    width: 40%;
+    color: black;
+    font-weight: bolder;
+    border-radius: 50px 50px 50px 50px;
+    transition: ease-in-out 0.2s;
+
+}
+
+/* change the colour of the home and create buttons on hover */
+.navBtns button:hover {
+    background-color: #521262;
+    border:none;
+    color: rgb(241, 241, 241);
+    transition: ease-in-out 0.2s;
+
+}
+
+/* the search bar */
+#searchBar {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchBar input {
+    border-radius: 40px 40px 40px 40px;
+    width: 100%;
+    height: 90%;
+    background-color: #E9E9E9;
+    color: #333333;
+    border: 1px solid rgb(241, 241, 241);
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+/* the account button */
+.accBtns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+    margin-left: 1%;
+}
+
+
+.accBtns button {
+    border: none;
+    width: 40%;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    
+}
+
+.accBtns button:hover {
+    transition: 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+/* for the icons that represent the buttons*/
+.accBtns img {
+    position: relative;
+    width: 58%;
+    height: 80%;
+    
+}
+
+#accountBtn{
+    border-radius: 50%;
+    border: none;
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#accountBtn img{
+    width: 70%; /* Make the image fill the button horizontally */
+    height: 100%; /* Make the image fill the button vertically */ 
+    object-fit:cover; /* Ensure the image covers the entire button area without distortion */
+    display: block; /* Ensure proper spacing */
+    border-radius: 50%;
+
+}
+
+/* contiains the sign up and log in buttons*/
+#signLoginNav {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    margin-left: 1%;
+    
+}
+
+#signLoginNav button {
+    border: none;
+    width: 45%;
+    cursor: pointer;
+    color: black;
+    background: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    font-weight: bolder;
+}
+
+#signLoginNav button:hover {
+    background-color: #4d135c;
+    color: rgb(241, 241, 241);
+    transition: 0.2s ease-in-out
+}
+
+
+ 
+
+/* Dropdown Button that has the logout option */
+.dropbtn {
+    background: none;
+    outline: none;
+    align-items: center;
+    border: none;
+    margin-top: 11%;
+  }
+
+  /* for the down arrow icon that causes the dropdown*/
+  .dropbtn img {
+    height:50%;
+    width: 50%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    right: 5%;
+    margin-top: 13%;
+    border-radius: 15px;
+    height: 30px;
+    width: 140px;
+    z-index: 1;
+    padding: 5px 5px 12px 5px;
+    border: 1px solid rgba(149, 149, 149, 0.573);
+
+  }
+  
+  /* button inside the dropdown */
+  .dropdown-content button {
+    padding: 10px 12px;
+    text-decoration: none;
+    min-width: 140px;
+    min-height: 30px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    background: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown button on hover */
+  .dropdown-content button:hover {background-color: #c6c6c6;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+
+/* the home tab that contains the posts made by other users */
+#home{
+    height: 90%;
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1%;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* the following tab that contains the posts made by followed users*/
+#followingPage, #explorePage, #likedPage, #searchResults {
+    height: 90%;
+    width: 99%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1%;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.result {
+    border: none;
+    width: 115px; 
+    height: 200px; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the button */
+    border-radius: 5px;
+    
+  }
+  
+.result img {
+    width: 100%; 
+    height: 100%; 
+    object-fit:cover; /* Scale the image to fit the whole button */
+    border-radius: 5px; 
+    border: none;
+  }
+
+.result p {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.resultPhoto {
+    width: 80%;
+    height: 45%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.followResultBtn {
+    min-width: 70%;
+    min-height: 10%;
+}
+/* contains the "following" and "explore" buttons*/
+#followingExplore {
+    width: 20%;
+    min-height: 7%;
+    margin-top: 3%;
+    margin-bottom: -2%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -75%;
+}
+
+#followingExplore button{
+    border: none;
+    width: 70%;
+    height: 85%;
+    cursor: pointer;
+    color: black;
+    font-weight: bolder;
+    background: none;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+#followingExplore button:hover {
+    transition: 0.2s ease-in-out;
+    transform: scale(1.15);
+    color:#4d135c;
+}
+
+
+#notificationTab {
+    height: 85%;
+    width: 99%;
+    margin-top: 2%;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.notification {
+    margin-left: 1%;
+    margin-top: 2%;
+    width: 99%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #81818156;
+}
+
+.notificationPhoto {
+    margin: 5px 0px 0px 5px;
+    max-width: 5%;
+    max-height:80%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 40%;
+    background: none;
+    outline: none;
+
+}
+
+.notificationPhoto img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+ 
+.notificationInfo {
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    width: 60%;
+    height: 55%;
+
+}
+
+
+.notifDelBtn:hover {
+    background-color: #4d135c;
+    color: white;
+    transition:ease-in-out 0.3s ;
+}
+
+.notificationInfo p {
+    margin-bottom: -1.5%;
+    margin-left: 2%;
+    font-size: 16px;
+}
+/* the posts that appear in the following and explore tabs,  */
+.post {
+    border: none;
+    width: 110px; 
+    height: 200px; 
+    background-color: #4d135c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the button */
+    border-radius: 5px;
+    
+  }
+  
+  .post img {
+    min-width: 120%; 
+    height: 110%; 
+    object-fit:cover; /* Scale the image to fit the whole button */
+    border-radius: 5px; 
+    border: none;
+  }
+  
+  /* on hover, make the button smaller to show the user that their currently hovering on that post */
+  .post:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: 0.2s ease-in-out;
+    transform: scale(0.9);
+  }
+  
+
+
+/* contains the account details of the user and their posts*/
+#accountTab {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* the account details*/
+#accountInfo{
+    margin-top: 1%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* contains the posts made by the user */
+#accountPostsContainer {
+    height: 40%;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1%;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* the account's posts*/
+.accPost{
+    background-color: #521262;
+    border-radius: 15px;
+    border: none;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the button */
+
+}
+
+/* the image/thumbnail on the post */
+.accPost img {
+    min-width: 120%; /* Ensure the image fills the button horizontally */
+    height: 110%; /* Ensure the image fills the button vertically */
+    object-fit:cover; /* Scale the image to fit the whole button */
+    border-radius: 5px; /* Maintain border-radius of the button */
+    border: none;
+}
+
+.accPost:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: 0.2s ease-in-out;
+    transform: scale(0.9);
+}
+
+#accountProfilePhoto {
+    width: 8%;
+    height: 62%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* profile photo */
+#accountProfilePhoto img {
+    position: relative;
+    height: 89%;
+    width: 84%;
+    border-radius: 50px;
+    object-fit: cover;
+}
+/* username */
+#accountUsername {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 0.5%;
+
+}
+
+/* user ID */
+#accountuUserID {
+    color: #6b6a6a;
+    font-size: 18px;
+
+}
+
+/* the contains the "following" and "followers" */
+#follows {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+#follows button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 550;
+
+}
+
+/* description */
+#accountDescription {
+    color: rgba(0, 0, 0, 0.614);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0.5%;
+}
+
+/* edit profile button*/
+#editProfileBtn {
+    width: 10%;
+    height: 20%;
+    border-radius: 25px;
+    background-color: #521262;
+    color: white;
+    border: none;
+    transition:ease-in-out 0.3s ;
+
+}
+
+#editProfileBtn:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+
+#editProfile {
+    width:60%;
+    height:70%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 25px;
+}
+
+#editProfileDetails {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#editProfileForm { 
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3%;
+
+}
+
+#editProfileForm input, #editProfileForm button{
+    align-self: center;
+}
+
+#editProfileForm button{
+    width: 20%;
+    height: 50%;
+}
+
+#editProfileForm h1 {
+    margin-left: 10%;
+}
+
+#editProfileForm textarea {
+    border-radius: 10px;
+    height: 30%;
+    margin-left: 10%;
+    width: 80%;
+    background-color: white;
+    border: 1.5px solid #d2d2d2;
+    color:rgb(51,51,51);
+    padding: 5px 0px 0px 5px;
+    margin-top: -1%;
+}
+
+.accCloseBtn {
+    margin-left: 90%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+}
+
+#editProfBtn {
+    max-width: 12%;
+    max-height: 12%;
+    border-radius: 15px;
+    background-color: #521262;
+    color: white;
+    border: none;
+    align-self: center;
+}
+
+#editProfBtn:hover {
+    transition:ease-in-out 0.4s ;
+    background-color: #3a0f45;
+}
+
+#viewFollowing, #viewFollowers {
+    margin-top: 5%;
+    border-radius: 25px;
+    width:50%;
+    height:70%;
+    background: rgb(241,241,241);
+    border: 1px solid rgba(101, 101, 101, 0.523);
+    align-items: start;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.following, .followers {
+    width: 95%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    
+
+}
+.followingPhoto, .followersPhoto{
+    margin: 5px 0px 0px 5px;
+    max-width: 8%;
+    max-height:80%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 40%;
+    background: none;
+    outline: none;
+
+}
+
+.followingPhoto img, .followersPhoto img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.followingUser, .followerUser {
+    align-self: center;
+    margin-left: 2%;
+    font-weight: bolder;
+}
+
+.removeFollowing, .removeFollower {
+    width:15%;
+    height: 40%;
+    border-radius: 25px;
+    background: #4d135c;
+    color: rgb(241, 241, 241);
+    border: none;
+    align-self: center;
+    margin-left: 5%;;
+    cursor: pointer;
+}
+
+#creationError, #editError {
+    color: red;
+    margin: -6% 0 -6% 0;
+    align-self: center;
+
+}
+
+#creationError {
+ width: 80%;
+}
+
+#editError {
+    margin: 0 0 1% 0;
+    align-self: center;
+}
+
+/* the create tab that allows the user to create their own posts*/
+#create  {
+    width:65%;
+    height:70%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 25px;
+}
+#createPostPic{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* ensure the image doesn't overflow the button */
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#createPostPic img {
+    min-width: 40%; 
+    height: 100%; 
+    object-fit:cover; /* scale the image to fit the whole button */
+    border: none;
+}
+
+/* the choose picture section on the left */
+#choosePic{
+    height: 100%;
+    width: 40%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+/* plus icon under the placeholder image, clicking on this allows the user to attach a file*/
+#plusIcon {
+    position: relative;
+    width: 35px;
+    height: 25px;
+    align-self: center;
+}
+
+#attachPostImg {
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: -5%;
+    margin-bottom: -4%;
+}
+
+/* contains the details like title and description as well as the post button */
+#createPostDetails {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+
+#createPostDetails h1{
+    margin-left: 10%; 
+    margin-top: 2%;
+}
+
+#postTitle {
+    border-radius: 10px;
+    height: 10%;
+    margin-left: 10%;
+    margin-top: -8%;
+    width: 80%;
+    background-color: white;
+    border: 1.5px solid #d2d2d2;
+    color:rgb(51,51,51);
+
+}
+
+#postDesc {
+    border-radius: 10px;
+    height: 30%;
+    margin-left: 10%;
+    margin-top: -8%;
+    width: 80%;
+    background-color: white;
+    border: 1.5px solid #d2d2d2;
+    color:rgb(51,51,51);
+    padding: 5px 0px 0px 5px;
+
+    
+}
+
+#postBtn, .followResultBtn {
+    width: 25%;
+    height: 12%;
+    border-radius: 25px;
+    background: none;
+    color: black;
+    border: none;
+    align-self: center;
+}
+
+#postBtn:hover, .followResultBtn:hover {
+    
+    background-color: #4d135c;
+    color: white;
+    transition:ease-in-out 0.3s ;
+}
+
+/* the view post div that is shown when an user clicks on the post and is expanded */ 
+#viewPost {
+    width:55%;
+    height:80%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 25px;
+
+}
+
+/* the post picture that appears on the left side */
+#postPic {
+    height: 100%;
+    width: 45%;
+    background-color: rgb(51,51,51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* ensure the image doesn't overflow the button */
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+}
+
+#postPic img {
+    min-width: 100%; 
+    height: 100%; 
+    object-fit:cover; /* scale the image to fit the whole button */
+    border: none;
+}
+
+/* zoom out on the picture when the user hovers over it */
+#postPic img:hover {
+    transition: 0.2s ease-in-out;
+    transform: scale(0.9);
+}
+
+/* contains the close button, following button, username, title, description, like button, and comment section*/
+#postDetails {
+    height: 100%;
+    width: 55%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+/* the close button on the top right */
+#postCloseBtn, #editCloseBtn {
+    height: 10%;
+    width: 10%;
+    background: none;
+    border: none;
+    align-self: center;
+    margin-left: 80%;
+    cursor: pointer;
+
+}
+
+/* plus icon rotated to appear like an "X" */
+#postCloseBtn img, .accCloseBtn img {
+    transform: rotate(45deg);
+}
+
+/* contains the username and follow button */ 
+#userPostDetails {
+    width: 100%;
+    height: 10%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* post title and description*/
+#postTitleAndDesc {
+    margin-top: 1.5%;
+    width: 99%;
+    min-height: 40%;
+    display:flex;
+    justify-content: left;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 2px solid rgba(191, 191, 191, 0.441) ;
+}
+
+#postTitleAndDesc h1 {
+    font-size: 24px;
+
+}
+
+#postTitleAndDesc p {
+    margin-top: -3%;
+    margin-left: 1%;
+    font-size: 20px;
+    color: #818181;
+    font-weight: lighter;
+}
+
+/* like button represented by heart icon */
+
+
+
+.likeBtn .heart-icon {
+    height: 100px;
+    width: 100px;
+    background: url("../imgs/heartanimation.png");
+    background-position: left;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  .likeBtn .heart-icon.liked {
+    animation: like-anim 0.7s steps(28) forwards;
+  }
+  
+  @keyframes like-anim {
+    to {
+      background-position: right;
+    }
+  }
+  
+  .likeBtn .heart-bg {
+    background: rgba(255, 192, 200, 0);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 100ms ease;
+  }
+  
+  .likeBtn .heart-bg:hover {
+    background: rgba(255, 192, 200, 0.7);
+  }
+  
+  .likeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+  }
+  
+  .likeBtn .likesAmt {
+    font-size: 15px;
+    color: #888;
+    font-weight: 900;
+    margin-right: -0.5%;
+  }
+
+/* comment section */
+#commentSection {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-top: 2%;
+    margin-left: -2%;
+    flex-direction: column;    
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+/* the sectoin that allows the user to make their own comment*/
+#userCommentOption {
+    display: flex;
+    justify-content:space-between;
+    height: 25%;
+    width: 100%;
+    margin-left: 3%;
+}
+
+#commentProfilePhoto {
+    width: 11%;
+    height: 100%; 
+    border-radius: 50%;
+    border: 1px solid rgba(51, 51, 51, 0.591);
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+#userCommentOption img{
+
+    width: 100%; /* Make the image fill the button horizontally */
+    height: 100%; /* Make the image fill the button vertically */ 
+    object-fit:cover; /* Ensure the image covers the entire button area without distortion */
+    display: block; /* Ensure proper spacing */
+    border-radius: 50%;
+
+
+}
+
+
+
+#userCommentOption input{
+
+    height: 95%;
+    width: 80%;
+    margin-right: 3%;
+    background-color: #E9E9E9;
+    color: #818181;
+    border: #818181;
+    border-radius: 30px;
+    padding-left: 10px;
+
+}
+
+#userCommentOption input:focus, #searchBar input:focus {
+    border: none; /* Remove border when input is focused */
+    outline: none; /* Remove default focus outline */
+}
+
+/* comments made by other users */
+.comment {
+    margin-top: 10px;
+    display: flex;
+    width: 90%;
+    margin-left: 3%;
+}
+
+.commentPhoto{
+    width: 12%;
+    max-height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(51, 51, 51, 0.591);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.commentText {
+    margin-left: 10px; /* Add margin left to create space between photo and text */
+    max-width: 80%;
+    height: 56px; /* Set a minimum height for text container */
+    flex-grow: 1; /* Allow text container to grow to fill remaining space */
+    word-wrap: break-word;
+    margin-top: 10px;
+
+}
+
+.comment p {
+    margin: 0; /* Remove default margin for paragraphs */
+    font-size:  15px !important;
+}
+
+.comment img{
+
+    width: 100%; /* Make the image fill the button horizontally */
+    height: 100%; /* Make the image fill the button vertically */ 
+    object-fit:cover; /* Ensure the image covers the entire button area without distortion */
+    display: block; /* Ensure proper spacing */
+    border-radius: 50%;
+
+}
+
+/* sign up box that is shown when the user clicks on the "sign up" button when not logged in*/
+#signupbox{
+    position: relative;
+    display: flex; 
+    align-items: start; 
+    width: 30%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;  /*elements are stacked column wise */
+    justify-content: flex-start; 
+    gap: 5%;
+    animation: fadein 0.75s;
+    margin-top: 3%;
+}
+
+
+/* login box that appears when the user clicks on the "log in" button when the user is not currently logged in*/
+#loginbox {
+
+    position: relative;
+    display: flex; 
+    align-items: start; 
+    margin-top: 10%;
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;  /*elements are stacked column wise */
+    justify-content: flex-start; 
+    gap: 7%;
+    animation: fadein 0.75s;
+
+
+
+}
+
+#signupbox h3, #loginbox h3 {
+    align-self: center;
+    font-size: 20px;
+    color: #521262;
+    position: relative;
+
+}
+
+#signupbox h3 {
+    margin-bottom: -2%;
+}
+
+#signupError, #loginError{
+    color: red;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+}
+
+#attachProfilePhoto, #attachNewProfilePhoto{
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#attachProfilePhoto img, #attachNewProfilePhoto img {
+    width: 100%; /* Make the image fill the button horizontally */
+    height: 100%; /* Make the image fill the button vertically */ 
+    object-fit:cover; /* Ensure the image covers the entire button area without distortion */
+    display: block; /* Ensure proper spacing */
+    border-radius: 50%;
+
+}
+#firstNameField, #lastNameField {
+    height: 30px;
+    width: 80%;
+    color: rgb(51,51,51);
+    border: none;
+    padding: 2px 5px 2px 10px;
+    background: transparent;
+    border-bottom: 2px solid #521262;
+    outline: none;
+
+
+}
+/* the below class applies to all the inputfields in the login and sign up pages */
+.inputField {
+    margin-bottom: 3%;
+    height: 30px;
+    width: 100%;
+    color: rgb(51,51,51);
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    /* padding: 2px 5px 2px 10px; */
+    background: transparent;
+    border-bottom: 2px solid #521262;
+
+}
+
+/* for the sign up button in the "sign up" page */
+#signupBtn{
+    width: 100%;
+    height: 12%;
+    background-color: #521262;
+    color: rgb(241,241,241);
+    border: none;    
+    border-radius: 20px; /* curves the borders */
+    cursor: pointer; /* hovering over the button will change the cursor to a pointer*/
+    transition: ease-in-out 0.2s;
+    margin-top: 3%;
+    align-self: center;
+
+}
+/* for the login button in the "login" page */
+#loginBtn {
+    width: 100%;
+    height: 40px;
+    background-color: #521262;
+    color: rgb(241,241,241);
+    border: none;    
+    border-radius: 20px; /* curves the borders */
+    cursor: pointer; /* hovering over the button will change the cursor to a pointer*/
+    transition: ease-in-out 0.2s;
+    margin-top: 3%;
+    align-self: center;
+}
+
+/* the buttons on the "sign up" and "login" pages that lead to each other */ 
+#signLoginBtn, #loginSignBtn{
+    color: #521262;
+    margin-left: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
+    
+}
+
+#signLoginBtn:hover, #loginSignBtn:hover {
+    color: #972eb1;
+
+}
+
+#signupbox p, #loginbox p {
+    
+    margin-top: -0.5%;
+    margin-bottom: 0.5%;
+
+}
+
+/* hovering over the sign up and login buttons on the "sign up" and "login" pages changes their colour */
+#signupBtn:hover, #loginBtn:hover{
+    background-color: black;
+}
+
+#signupbox input:focus, #loginbox input:focus{
+    border-bottom-color: #4d135c;
+}
+
+#signupbox input::placeholder, #loginbox input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* hovering over the links in the "signup" and "login" pages changes their colour */
+#signupbox a:hover, #loginbox a:hover {
+    color:  rgb(51,51,51);
+}
+
+
+.dark {
+    background-color:rgb(51,51,51);
+    color: #f1f1f1;
+}
+

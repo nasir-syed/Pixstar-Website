@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pixstar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/pixstar.js"></script>
+</head>
+
+<body>
+
+    <!--the content div contains call the other divs-->
+    <div id="content">
+
+        <!-- navigation bar for all tabs -->
+        <div id="navbar">
+
+            <!--the purple logo in the top left corner-->
+            <div id="logo"><img src="../imgs/pixstarLogo.png" alt="pixstar logo"></div>
+
+            <!--the home and create buttons also in the top left-->
+            <div class="navBtns">
+                <button id="homeBtn">Home</button>
+                <button id="createBtn">Create</button>
+            </div>
+
+            <!--the search bar-->
+            <div id="searchBar">
+                <input type="text" placeholder="Search" id="search">
+            </div>
+
+            <!--notification and account buttons represented by icons-->
+            <div class="accBtns">
+                <button id="accountBtn"><img src="../imgs/profileIcon.png" alt="profile Icon"></button>
+                <button id="notifBtn"><img src="../imgs/notifBellIcon.png" alt="Notification Bell Icon"></button>
+            </div>
+
+            <!--the on hover dropdown button that has the logout option-->
+            <div class="dropdown">
+                <button class="dropbtn"><img src="../imgs/dropdownIcon.png" alt="drop down arrow"></button>
+                <div class="dropdown-content">
+                    <button id="logoutBtn">Log Out</button>
+                </div>
+            </div>
+
+            <!--the sign in and log in buttons on the top right when the user is not logged in-->
+            <div id="signLoginNav">
+                <button id="signNav">Sign Up</button>
+                <button id="loginNav">Log in</button>
+            </div>
+
+        </div>
+
+        <!--contains the "following" and "explore" buttons, displayed when the user clicks on the home button-->
+        <div id="followingExplore">
+            <button id="followingPageBtn">Following</button>
+            <button id="explorePageBtn">Explore</button>
+            <button id="likedPageBtn">Liked</button>
+        </div>
+
+        <div id="searchResults"></div>
+
+        <!--the "home" tab that is displayed when the user clicks on the home button-->
+        <div id="home">
+
+            <!-- the following page/tab that is shown when the user clicks on the "following" button-->
+            <div id="followingPage"></div>
+
+
+            <!-- the explore page/tab that is shown when the user clicks on the "explore" button, and the "liked" page that is shown when the user clicks on the "liked" button in the home tab-->
+            <div id="explorePage"></div>  
+            <div id="likedPage"></div>  
+        </div>
+
+        <!-- the account tab that is shown when the user clicks on the "account" button represented by an icon-->
+        <div id="accountTab">
+
+            <!--"accountInfo" div contains the profile photo, name, userID, following, follows and edit button elements-->
+            <div id="accountInfo">
+                <div id="accountProfilePhoto"><img src="../imgs/profileIcon.png" alt="Profile Icon"></div>
+                <div id="accountUsername">User</div>
+                <div id="accountUserID">@username</div>
+                <div id="follows">
+                    <button id="accountFollowersBtn">0 followers </button>
+                    <p> · </p>
+                    <button id="accountFollowingBtn"> 0 following</button>
+                </div>
+                <div id="accountDescription">description</div>
+                <button id="editProfileBtn">Edit</button>
+            </div>
+
+            <!-- the "accountPostsContainer" contains all of the user's post, that are scrollable and viewable-->
+            <div id="accountPostsContainer"></div>
+        </div>
+
+        <!-- the create tab that is shown when the user clicks on the "create" button, allows users to create their own posts -->
+        <div id="create">
+
+            <!--allow the users to choose a picture by clicking on the "plusIcon", till then a placeholderImg is kept-->
+
+            <div id="createPostPic">
+                <img id="createPostplaceholderImg" src="../imgs/placeholderImageIcon.png" alt="Placeholder Image">
+            </div>
+
+            <!--contains the post details such as the title, description as well as the post button-->
+            <form id="postForm" style="width: 60%;">
+                <div id="createPostDetails">
+                    <h1>Title</h1>
+                    <input type="text" id="postTitle">
+                    <p id="creationError"></p>
+
+                    <h1>Description</h1>
+                    <textarea id="postDesc" rows="2" cols="30"></textarea>
+
+                    <input type="file" id="PostPhotoInput" accept="image/*" style="display: none;">
+                    <button id="attachPostImg" type="button"><img src="../imgs/plusIcon.png" alt="plusIcon"></button>
+
+                    <button id="postBtn" type="submit">Post</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!--This div is shown whenever the user clicks on the post -->
+        <div id="viewPost">
+
+            <!--the post picture that appears on the left side, a placeholder is kept but is replaced by the img that is shown on the posts thumbnail when expanded-->
+            <div id="postPic">
+                <img id="placeholderImg" src="../imgs/placeholderImageIcon.png" alt="Placeholder Image">
+            </div>
+
+            <!--contains the close button, username, following button, title, description and comment section-->
+            <div id="postDetails">
+                <button id="postCloseBtn"><img src="../imgs/plusIcon.png" alt="Close Button"></button>
+                <div id="userPostDetails">
+                    <h1 id="postUserID">someuser</h1>
+                </div>
+                <div id="postTitleAndDesc">
+                    <h1 id="viewPostTitle">A Great Title</h1>
+                    <p id="viewPostDesc">Isn't the photo amazing...</p>
+                    <div class="likeBtn">
+                        <div class="likesAmt">0</div>
+                        <div class="heart-bg">
+                            <div class="heart-icon"></div>
+                        </div>
+                    </div>
+                </div>
+                    <!--contains the option for the user to comment, along with comments made by others-->
+                    <div id="commentSection">
+                        <div id ="userCommentOption">
+                            <div id="commentProfilePhoto"><img src="../imgs/profileIcon.png" alt="Profile Photo"></div>
+                            <input type="text" placeholder="  add a comment...">
+                        </div>
+                        <div id="userComments"></div>
+                    </div>
+            </div>
+        </div>
+
+        <div id="editProfile">
+            <div id="editProfileDetails">
+                <button class="accCloseBtn"><img src="../imgs/plusIcon.png" alt="Close Button"></button>
+                <form id="editProfileForm" style="width: 100%;">
+                    <input type="file" id="editProfilePhotoInput" accept="image/*" style="display: none;">
+                    <button id="attachNewProfilePhoto" type="button"><img src="../imgs/profileIcon.png" alt="Profile Icon"></button>
+                    <h1>Description</h1>
+                    <textarea id="profDesc" rows="1" cols="10"></textarea>
+                    <p id="editError"></p>
+                    <button id="editProfBtn" type="submit">Done</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="viewFollowing">
+            <button class="accCloseBtn"><img src="../imgs/plusIcon.png" alt="Close Button"></button>
+        </div>
+
+        <div id="viewFollowers">
+            <button class="accCloseBtn"><img src="../imgs/plusIcon.png" alt="Close Button"></button>
+        </div>
+
+        <div id=notificationTab></div>
+
+        <!-- the sign up box that appears when the user clicks on the "sign up" button on the top right when not logged in-->
+        <div id="signupbox">
+            <h3> SIGN UP </h3>
+            <form id="signupForm">
+                <div style="display: flex; gap: 11%; width: 100%; margin-bottom: 3%;">
+                    <input type="text" id="firstNameField"  placeholder="First Name" required>
+                    <input type="text" id="lastNameField"   placeholder="Last Name" required>
+                </div>
+                <input type="email" id="signupEmailField"  class="inputField" placeholder="Email" required>
+                <input type="password" id="signupPassField"  class="inputField" placeholder="Password" required> 
+                <input type="password" id="signupConfirmPassField"  class="inputField" placeholder="Confirm Password" required> 
+                <div style="display: flex; justify-content: space-between; margin-bottom: 3%; margin-top: 3%;">
+                    <div id="choosePic">
+                        <input type="file" id="profilePhotoInput" accept="image/*" style="display: none;">
+                        <button id="attachProfilePhoto" type="button"><img src="../imgs/profileIcon.png" alt="Profile Icon"></button>
+                    </div>
+                    <input type="text" id="signupUserField"  class="inputField" placeholder="Username" required>
+                </div>
+                <input type="text" id="descriptionField" class="inputField" placeholder="Description" required>
+                <p>Already have an account? <button id="signLoginBtn" type="button">Login</button></p>
+                <!--used to display any error messages-->
+                <p id="signupError"></p>
+                <button id="signupBtn" type="submit"> Sign Up</button> 
+            </form>
+        </div>
+
+        <!-- the login box that appears when the user clicks on the "log in" button on the top right when not logged in-->
+        <div id="loginbox">
+            <h3> LOG IN </h3>
+            <form id="loginForm">
+                <input type="text" id="loginUserField"  class="inputField" placeholder="Username" required>
+                <input type="password" id="loginPassField"  class="inputField" placeholder="Password" required>                         
+                <p>Don't have an account? <button id="loginSignBtn" type="button">Sign Up</button></p>
+                <p id="loginError"></p>
+                <button id="loginBtn" type="submit">Log In</button> 
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

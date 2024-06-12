@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "6625942e2d2eca24a20b623b"
+  },
+  "username": "arthurmorg",
+  "followers": [
+    "johnmars"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6625943b2d2eca24a20b623d"
+  },
+  "username": "webdeveloper",
+  "followers": [
+    "johnmars",
+    "arthurmorg",
+    "middlesexdubai"
+  ]
+},
+{
+  "_id": {
+    "$oid": "662594992d2eca24a20b6240"
+  },
+  "username": "johnmars",
+  "followers": [
+    "arthurmorg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "662594a32d2eca24a20b6242"
+  },
+  "username": "nasir",
+  "followers": [
+    "middlesexdubai",
+    "webdeveloper",
+    "johnmars"
+  ]
+},
+{
+  "_id": {
+    "$oid": "662596992d2eca24a20b624a"
+  },
+  "username": "middlesexdubai",
+  "followers": [
+    "webdeveloper",
+    "nasir"
+  ]
+}]
